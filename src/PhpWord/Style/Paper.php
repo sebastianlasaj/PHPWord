@@ -162,11 +162,11 @@ class Paper extends AbstractStyle
         list($width, $height, $unit) = $this->sizes[$this->size];
 
         if ($unit == 'mm') {
-            $this->width = Converter::cmToTwip($width / 10);
-            $this->height = Converter::cmToTwip($height / 10);
+            $this->width = number_format(Converter::cmToTwip($width / 10),9,'.','');
+            $this->height = number_format(Converter::cmToTwip($height / 10),9,'.','');
         } else {
-            $this->width = Converter::inchToTwip($width);
-            $this->height = Converter::inchToTwip($height);
+            $this->width = number_format(Converter::inchToTwip($width),9,'.','');
+            $this->height = number_format(Converter::inchToTwip($height),9,'.','');
         }
 
         return $this;
